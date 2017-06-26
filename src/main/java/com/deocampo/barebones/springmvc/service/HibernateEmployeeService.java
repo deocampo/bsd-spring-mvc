@@ -1,4 +1,4 @@
-package com.earldouglas.barebones.springmvc.service;
+package com.deocampo.barebones.springmvc.service;
 
 import java.util.Collection;
 
@@ -8,7 +8,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.earldouglas.barebones.springmvc.Employee;
+import com.deocampo.barebones.springmvc.Employee;
 
 @Transactional
 public class HibernateEmployeeService implements EmployeeService {

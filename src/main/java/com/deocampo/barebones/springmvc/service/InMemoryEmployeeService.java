@@ -1,4 +1,4 @@
-package com.earldouglas.barebones.springmvc.service;
+package com.deocampo.barebones.springmvc.service;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
-import com.earldouglas.barebones.springmvc.Employee;
+import com.deocampo.barebones.springmvc.Employee;
 
 @Repository
 public class InMemoryEmployeeService implements EmployeeService {

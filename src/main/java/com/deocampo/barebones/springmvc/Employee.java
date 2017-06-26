@@ -1,4 +1,4 @@
-package com.earldouglas.barebones.springmvc;
+package com.deocampo.barebones.springmvc;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

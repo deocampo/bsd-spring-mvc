@@ -1,4 +1,4 @@
-package com.earldouglas.barebones.springmvc.web;
+package com.deocampo.barebones.springmvc.web;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-import com.earldouglas.barebones.springmvc.Employee;
+import com.deocampo.barebones.springmvc.Employee;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType

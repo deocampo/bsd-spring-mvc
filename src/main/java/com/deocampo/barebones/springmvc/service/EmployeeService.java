@@ -1,8 +1,8 @@
-package com.earldouglas.barebones.springmvc.service;
+package com.deocampo.barebones.springmvc.service;
 
 import java.util.Collection;
 
-import com.earldouglas.barebones.springmvc.Employee;
+import com.deocampo.barebones.springmvc.Employee;
 
 public interface EmployeeService {
 

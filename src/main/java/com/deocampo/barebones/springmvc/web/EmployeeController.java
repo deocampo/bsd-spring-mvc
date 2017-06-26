@@ -1,4 +1,4 @@
-package com.earldouglas.barebones.springmvc.web;
+package com.deocampo.barebones.springmvc.web;
 
 import java.util.Collection;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.earldouglas.barebones.springmvc.Employee;
-import com.earldouglas.barebones.springmvc.service.EmployeeService;
+import com.deocampo.barebones.springmvc.Employee;
+import com.deocampo.barebones.springmvc.service.EmployeeService;
 
 @Controller
 @RequestMapping("/employees")
