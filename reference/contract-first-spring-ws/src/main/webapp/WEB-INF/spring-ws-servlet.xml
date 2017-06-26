@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:oxm="http://www.springframework.org/schema/oxm"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+     http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-1.5.xsd">
+
+	<bean id="employee1" class="com.earldouglas.directory.Employee">
+		<property name="id" value="1" />
+		<property name="name" value="Max Power" />
+		<property name="title" value="The Leader" />
+	</bean>
+
+	<bean id="employee2" class="com.earldouglas.directory.Employee">
+		<property name="id" value="2" />
+		<property name="name" value="Number Two" />
+		<property name="title" value="Second in Command" />
+	</bean>
+
+	<bean id="employee3" class="com.earldouglas.directory.Employee">
+		<property name="id" value="3" />
+		<property name="name" value="Jonny McDoe" />
+		<property name="title" value="Work Man" />
+	</bean>
+
+	<util:map id="employees">
+		<entry key="1" value-ref="employee1" />
+		<entry key="2" value-ref="employee2" />
+		<entry key="3" value-ref="employee3" />
+	</util:map>
+
+	<bean id="directoryEndpoint" class="com.earldouglas.springws.directory.DirectoryEndpoint">
+		<property name="employees" ref="employees" />
+	</bean>
+
+	<oxm:jaxb2-marshaller id="marshaller"
+		contextPath="com.earldouglas.directory" />
+
+	<bean
+		class="org.springframework.ws.server.endpoint.adapter.GenericMarshallingMethodEndpointAdapter">
+		<constructor-arg ref="marshaller" />
+	</bean>
+
+	<bean
+		class="org.springframework.ws.server.endpoint.mapping.PayloadRootAnnotationMethodEndpointMapping" />
+
+</beans>

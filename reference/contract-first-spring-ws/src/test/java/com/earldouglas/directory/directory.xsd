@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" targetNamespace="http://www.earldouglas.com/directory"
+	xmlns:directory="http://www.earldouglas.com/directory">
+	<xs:element name="employee-request" type="directory:id" />
+	<xs:element name="employee-response" type="directory:employee" />
+	<xs:complexType name="employee">
+		<xs:complexContent>
+			<xs:extension base="directory:id">
+				<xs:sequence minOccurs="1" maxOccurs="1">
+					<xs:element ref="directory:name" />
+					<xs:element ref="directory:title" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="name" type="xs:string" />
+	<xs:element name="title" type="xs:string" />
+	<xs:complexType name="id">
+		<xs:sequence minOccurs="1" maxOccurs="1">
+			<xs:element ref="directory:id" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="id" type="xs:integer" />
+</xs:schema>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:sch="http://www.earldouglas.com/directory" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://www.earldouglas.com/directory" targetNamespace="http://www.earldouglas.com/directory">
+	<wsdl:types>
+		<xs:schema xmlns:directory="http://www.earldouglas.com/directory"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+			targetNamespace="http://www.earldouglas.com/directory">
+			<xs:element name="employee-request" type="directory:id" />
+			<xs:element name="employee-response" type="directory:employee" />
+			<xs:complexType name="employee">
+				<xs:complexContent>
+					<xs:extension base="directory:id">
+						<xs:sequence maxOccurs="1" minOccurs="1">
+							<xs:element ref="directory:name" />
+							<xs:element ref="directory:title" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="title" type="xs:string" />
+			<xs:complexType name="id">
+				<xs:sequence maxOccurs="1" minOccurs="1">
+					<xs:element ref="directory:id" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="id" type="xs:integer" />
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="employee-response">
+		<wsdl:part element="tns:employee-response" name="employee-response">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="employee-request">
+		<wsdl:part element="tns:employee-request" name="employee-request">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="Directory">
+		<wsdl:operation name="employee">
+			<wsdl:input message="tns:employee-request" name="employee-request">
+			</wsdl:input>
+			<wsdl:output message="tns:employee-response" name="employee-response">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="DirectorySoap11" type="tns:Directory">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="employee">
+			<soap:operation soapAction="" />
+			<wsdl:input name="employee-request">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="employee-response">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DirectoryService">
+		<wsdl:port binding="tns:DirectorySoap11" name="DirectorySoap11">
+			<soap:address location="http://localhost:8080/springws/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,7 @@
+<employee-response xmlns="http://www.earldouglas.com/directory">
+	<employee>
+		<id>3</id>
+		<name>Johnny McDoe</name>
+		<title>Work Man</title>
+	</employee>
+</employee-response>
