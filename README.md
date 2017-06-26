@@ -1,6 +1,10 @@
 # Barebones Spring MVC
 
-Barebones Spring MVC is an e-book based on the article series I started in 2009. It is a basic overview of some of the most commonly used components of Spring MVC 3.0, and takes the reader through the development of an example Spring MVC application from scratch.
+This project comes from the following repository:
 
-* Download the [PDF](https://github.com/JamesEarlDouglas/barebones-spring-mvc/raw/master/e-book/barebones-spring-mvc.pdf)
+https://github.com/maugomez77/barebones-spring-mvc
+
+I'ved downloaded it and extended it for my learning purposes.  Please visit the site above for a better barebones project source, since this project may be in permanent flux.
+
+
 
