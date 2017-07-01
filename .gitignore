@@ -1,6 +1,7 @@
 *.swp
 .classpath
 .project
+.DS_Store
 .settings/
 target/
 e-book/
